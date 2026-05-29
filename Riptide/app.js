@@ -1,4 +1,4 @@
-const port = 8080
+const port = process.env.PORT || 8080
 const express = require('express');
 const app = express();
 const Rhodium = require("./lib/main/bundle")
@@ -30,6 +30,6 @@ app.use(function (req, res) {
 }
 })
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
   console.log(`Riptide is running at localhost:${port}`)
 });
